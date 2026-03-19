@@ -1,0 +1,279 @@
+---
+const projects = [
+	{
+		title: 'Portfolio Motion',
+		description: 'Landing personal con transiciones fluidas, storytelling visual y micro-animaciones.',
+		tags: ['Astro', 'Tailwind', 'GSAP'],
+		color: '#ff5b8f',
+	},
+	{
+		title: 'Task Radar',
+		description: 'Gestor de tareas con priorización inteligente y drag-and-drop semanal.',
+		tags: ['React', 'TypeScript', 'DnD'],
+		color: '#9be35a',
+	},
+	{
+		title: 'Dev Notes API',
+		description: 'API REST con autenticación JWT, rate limiting y docs automáticos.',
+		tags: ['Node', 'Express', 'PostgreSQL'],
+		color: '#71caff',
+	},
+	{
+		title: 'Commerce UI Kit',
+		description: 'Biblioteca de componentes accesibles para ecommerce con design tokens.',
+		tags: ['Design System', 'Storybook', 'CSS'],
+		color: '#ffd84d',
+	},
+	{
+		title: 'FitMap Tracker',
+		description: 'Rutas deportivas con heatmaps, logros y estadísticas en tiempo real.',
+		tags: ['Vue', 'Mapbox', 'Firebase'],
+		color: '#ffb14a',
+	},
+	{
+		title: 'Studio Booking',
+		description: 'Reservas de salas con panel admin, calendario y notificaciones push.',
+		tags: ['Next.js', 'Prisma', 'Auth'],
+		color: '#b9a7ff',
+	},
+	{
+		title: 'Bug Replay',
+		description: 'Grabación de sesiones para reproducir bugs con contexto compartible.',
+		tags: ['Svelte', 'WebRTC', 'Cloudflare'],
+		color: '#78e6d6',
+	},
+	{
+		title: 'Learn Sprint',
+		description: 'Plataforma de estudio con retos diarios, rachas y gráficos de progreso.',
+		tags: ['PWA', 'IndexedDB', 'Charts'],
+		color: '#ff7a6a',
+	},
+];
+---
+
+<section id="projects" class="flex min-h-screen scroll-mt-24 flex-col items-center px-4 py-20 sm:px-8">
+	<h2 class="mb-10 font-sans text-[clamp(2rem,4vw,3.5rem)] font-black uppercase tracking-tight text-[#1d1d1d]">
+		Projects
+	</h2>
+
+	<!-- Comic page container: black bg = borders between panels -->
+	<div class="comic-page w-full max-w-5xl overflow-hidden rounded-lg border-[6px] border-black bg-black shadow-[8px_8px_0_#1a1a1a]">
+
+		<!-- ROW 1 ─ Full width ─ P1 -->
+		<div class="comic-row">
+			<article class="comic-panel panel-full" style={`background-color:${projects[0].color}`}>
+				<div class="panel-content relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
+					<div>
+						<span class="mb-2 inline-block rounded-full border-2 border-black bg-white px-2.5 py-0.5 font-sans text-[10px] font-black uppercase tracking-wider text-black">01</span>
+						<h3 class="mb-1 font-sans text-xl font-black leading-tight text-black sm:text-2xl">{projects[0].title}</h3>
+						<p class="font-sans text-sm font-semibold leading-relaxed text-black/80">{projects[0].description}</p>
+					</div>
+					<ul class="mt-3 flex flex-wrap gap-1.5">
+						{projects[0].tags.map((t) => <li class="rounded border-2 border-black bg-white/70 px-2 py-0.5 font-sans text-[11px] font-black uppercase tracking-wide text-black">{t}</li>)}
+					</ul>
+				</div>
+			</article>
+		</div>
+
+		<!-- ROW 2 ─ Diagonal ╲ ─ P2 + P3 -->
+		<div class="comic-row comic-row--split">
+			<article class="comic-panel panel-r2-l" style={`background-color:${projects[1].color}`}>
+				<div class="panel-content panel-content--left relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
+					<div>
+						<span class="mb-2 inline-block rounded-full border-2 border-black bg-white px-2.5 py-0.5 font-sans text-[10px] font-black uppercase tracking-wider text-black">02</span>
+						<h3 class="mb-1 font-sans text-xl font-black leading-tight text-black">{projects[1].title}</h3>
+						<p class="font-sans text-sm font-semibold leading-relaxed text-black/80">{projects[1].description}</p>
+					</div>
+					<ul class="mt-3 flex flex-wrap gap-1.5">
+						{projects[1].tags.map((t) => <li class="rounded border-2 border-black bg-white/70 px-2 py-0.5 font-sans text-[11px] font-black uppercase tracking-wide text-black">{t}</li>)}
+					</ul>
+				</div>
+			</article>
+			<article class="comic-panel panel-r2-r" style={`background-color:${projects[2].color}`}>
+				<div class="panel-content panel-content--right relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
+					<div>
+						<span class="mb-2 inline-block rounded-full border-2 border-black bg-white px-2.5 py-0.5 font-sans text-[10px] font-black uppercase tracking-wider text-black">03</span>
+						<h3 class="mb-1 font-sans text-xl font-black leading-tight text-black">{projects[2].title}</h3>
+						<p class="font-sans text-sm font-semibold leading-relaxed text-black/80">{projects[2].description}</p>
+					</div>
+					<ul class="mt-3 flex flex-wrap gap-1.5">
+						{projects[2].tags.map((t) => <li class="rounded border-2 border-black bg-white/70 px-2 py-0.5 font-sans text-[11px] font-black uppercase tracking-wide text-black">{t}</li>)}
+					</ul>
+				</div>
+			</article>
+		</div>
+
+		<!-- ROW 3 ─ Diagonal ╱ ─ P4 + P5 -->
+		<div class="comic-row comic-row--split">
+			<article class="comic-panel panel-r3-l" style={`background-color:${projects[3].color}`}>
+				<div class="panel-content panel-content--left relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
+					<div>
+						<span class="mb-2 inline-block rounded-full border-2 border-black bg-white px-2.5 py-0.5 font-sans text-[10px] font-black uppercase tracking-wider text-black">04</span>
+						<h3 class="mb-1 font-sans text-xl font-black leading-tight text-black">{projects[3].title}</h3>
+						<p class="font-sans text-sm font-semibold leading-relaxed text-black/80">{projects[3].description}</p>
+					</div>
+					<ul class="mt-3 flex flex-wrap gap-1.5">
+						{projects[3].tags.map((t) => <li class="rounded border-2 border-black bg-white/70 px-2 py-0.5 font-sans text-[11px] font-black uppercase tracking-wide text-black">{t}</li>)}
+					</ul>
+				</div>
+			</article>
+			<article class="comic-panel panel-r3-r" style={`background-color:${projects[4].color}`}>
+				<div class="panel-content panel-content--right relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
+					<div>
+						<span class="mb-2 inline-block rounded-full border-2 border-black bg-white px-2.5 py-0.5 font-sans text-[10px] font-black uppercase tracking-wider text-black">05</span>
+						<h3 class="mb-1 font-sans text-xl font-black leading-tight text-black">{projects[4].title}</h3>
+						<p class="font-sans text-sm font-semibold leading-relaxed text-black/80">{projects[4].description}</p>
+					</div>
+					<ul class="mt-3 flex flex-wrap gap-1.5">
+						{projects[4].tags.map((t) => <li class="rounded border-2 border-black bg-white/70 px-2 py-0.5 font-sans text-[11px] font-black uppercase tracking-wide text-black">{t}</li>)}
+					</ul>
+				</div>
+			</article>
+		</div>
+
+		<!-- ROW 4 ─ Full width ─ P6 -->
+		<div class="comic-row">
+			<article class="comic-panel panel-full" style={`background-color:${projects[5].color}`}>
+				<div class="panel-content relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
+					<div>
+						<span class="mb-2 inline-block rounded-full border-2 border-black bg-white px-2.5 py-0.5 font-sans text-[10px] font-black uppercase tracking-wider text-black">06</span>
+						<h3 class="mb-1 font-sans text-xl font-black leading-tight text-black sm:text-2xl">{projects[5].title}</h3>
+						<p class="font-sans text-sm font-semibold leading-relaxed text-black/80">{projects[5].description}</p>
+					</div>
+					<ul class="mt-3 flex flex-wrap gap-1.5">
+						{projects[5].tags.map((t) => <li class="rounded border-2 border-black bg-white/70 px-2 py-0.5 font-sans text-[11px] font-black uppercase tracking-wide text-black">{t}</li>)}
+					</ul>
+				</div>
+			</article>
+		</div>
+
+		<!-- ROW 5 ─ Diagonal ╲ steeper ─ P7 + P8 -->
+		<div class="comic-row comic-row--split">
+			<article class="comic-panel panel-r5-l" style={`background-color:${projects[6].color}`}>
+				<div class="panel-content panel-content--left relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
+					<div>
+						<span class="mb-2 inline-block rounded-full border-2 border-black bg-white px-2.5 py-0.5 font-sans text-[10px] font-black uppercase tracking-wider text-black">07</span>
+						<h3 class="mb-1 font-sans text-xl font-black leading-tight text-black">{projects[6].title}</h3>
+						<p class="font-sans text-sm font-semibold leading-relaxed text-black/80">{projects[6].description}</p>
+					</div>
+					<ul class="mt-3 flex flex-wrap gap-1.5">
+						{projects[6].tags.map((t) => <li class="rounded border-2 border-black bg-white/70 px-2 py-0.5 font-sans text-[11px] font-black uppercase tracking-wide text-black">{t}</li>)}
+					</ul>
+				</div>
+			</article>
+			<article class="comic-panel panel-r5-r" style={`background-color:${projects[7].color}`}>
+				<div class="panel-content panel-content--right relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
+					<div>
+						<span class="mb-2 inline-block rounded-full border-2 border-black bg-white px-2.5 py-0.5 font-sans text-[10px] font-black uppercase tracking-wider text-black">08</span>
+						<h3 class="mb-1 font-sans text-xl font-black leading-tight text-black">{projects[7].title}</h3>
+						<p class="font-sans text-sm font-semibold leading-relaxed text-black/80">{projects[7].description}</p>
+					</div>
+					<ul class="mt-3 flex flex-wrap gap-1.5">
+						{projects[7].tags.map((t) => <li class="rounded border-2 border-black bg-white/70 px-2 py-0.5 font-sans text-[11px] font-black uppercase tracking-wide text-black">{t}</li>)}
+					</ul>
+				</div>
+			</article>
+		</div>
+	</div>
+</section>
+
+<style>
+	/* ── Row containers ──────────────────────────── */
+	.comic-row + .comic-row {
+		margin-top: 6px;
+	}
+
+	/* Full-width panels */
+	.panel-full {
+		position: relative;
+		height: 190px;
+	}
+
+	/* Split rows (two diagonal panels) */
+	.comic-row--split {
+		position: relative;
+		height: 280px;
+	}
+
+	.comic-row--split .comic-panel {
+		position: absolute;
+		inset: 0;
+	}
+
+	/* ── Halftone dot pattern overlay ────────────── */
+	.comic-panel {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.comic-panel::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(circle, rgba(0, 0, 0, 0.09) 1px, transparent 1px);
+		background-size: 7px 7px;
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	/* ── Diagonal clip-paths ─────────────────────── */
+	/*
+	 * Black bg of the container bleeds through the gap
+	 * between complementary clip-paths = thick diagonal border.
+	 * No border property needed → nothing gets cut.
+	 */
+
+	/* Row 2: ╲ diagonal (left wider at top, right wider at bottom) */
+	.panel-r2-l {
+		clip-path: polygon(0 0, 56% 0, 44% 100%, 0 100%);
+	}
+	.panel-r2-r {
+		clip-path: polygon(59% 0, 100% 0, 100% 100%, 47% 100%);
+	}
+
+	/* Row 3: ╱ diagonal (left wider at bottom, right wider at top) */
+	.panel-r3-l {
+		clip-path: polygon(0 0, 44% 0, 56% 100%, 0 100%);
+	}
+	.panel-r3-r {
+		clip-path: polygon(47% 0, 100% 0, 100% 100%, 59% 100%);
+	}
+
+	/* Row 5: ╲ steeper diagonal */
+	.panel-r5-l {
+		clip-path: polygon(0 0, 54% 0, 42% 100%, 0 100%);
+	}
+	.panel-r5-r {
+		clip-path: polygon(57% 0, 100% 0, 100% 100%, 45% 100%);
+	}
+
+	/* ── Content safe area (keep text inside visible zone) ── */
+	.panel-content--left {
+		padding-right: 60% !important;
+	}
+	.panel-content--right {
+		padding-left: 62% !important;
+	}
+
+	/* ── Mobile: stack panels, no diagonals ───────── */
+	@media (max-width: 767px) {
+		.comic-row--split {
+			height: auto;
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+		}
+
+		.comic-row--split .comic-panel {
+			position: relative;
+			height: 210px;
+			clip-path: none !important;
+		}
+
+		.panel-content--left,
+		.panel-content--right {
+			padding-left: 1.25rem !important;
+			padding-right: 1.25rem !important;
+		}
+	}
+</style>
