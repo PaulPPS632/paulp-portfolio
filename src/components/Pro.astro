@@ -1,15 +1,19 @@
 ---
+import VignetteGameofthrones from "./vignettes/vignette-gameofthrones.astro";
+
 const data = 2;
 ---
 
 <section
     id="projects"
-    class="flex min-h-screen scroll-mt-24 flex-col items-center px-4 py-20 sm:px-8 overflow-hidden"
+    class="flex min-h-screen scroll-mt-24 flex-col items-center px-4 py-20 sm:px-8"
 >
     <div
         class="comic-page grid grid-cols-3 grid-rows-8 w-full max-w-6xl h-[80vh] rounded-lg border-[6px] border-black bg-black shadow-[8px_8px_0_#1a1a1a] gap-2"
     >
-        <div class="vineta row-span-2 bg-red-400 v-1 flex items-center justify-center cursor-pointer">1</div>
+        <div class="vineta row-span-2 bg-[#111212] v-1 flex items-center justify-center cursor-pointer" data-url="/game-of-thrones">
+            <VignetteGameofthrones />
+        </div>
         <div class="vineta row-span-2 col-start-1 row-start-3 bg-amber-300 v-2 flex items-center justify-center cursor-pointer">2</div>
         <div class="vineta row-span-2 col-start-1 row-start-5 bg-green-400 v-3 flex items-center justify-center cursor-pointer">3</div>
         <div class="vineta row-span-2 col-start-1 row-start-7 bg-blue-400 v-4 flex items-center justify-center cursor-pointer">4</div>
@@ -74,6 +78,7 @@ const data = 2;
 
 <script>
     import gsap from "gsap";
+    import { navigate } from "astro:transitions/client";
 
     function initComicZoom() {
         const comicPage = document.querySelector<HTMLElement>(".comic-page");
@@ -81,9 +86,10 @@ const data = 2;
         if (!comicPage || !vinetas.length) return;
 
         let isZoomed = false;
+        let isRedirecting = false;
         let currentTl: gsap.core.Timeline | null = null;
 
-        function zoomToVineta(vineta: HTMLElement) {
+        function zoomToVineta(vineta: HTMLElement, targetUrl?: string) {
             if (isZoomed) return;
 
             const comicRect = comicPage!.getBoundingClientRect();
@@ -107,6 +113,8 @@ const data = 2;
             const currentCenterY = vinetaRect.top + vinetaRect.height / 2;
             const translateX = viewportCenterX - currentCenterX;
             const translateY = viewportCenterY - currentCenterY;
+            const ZOOM_DURATION = 0.6;
+            const REDIRECT_EARLY = 0;
 
             isZoomed = true;
 
@@ -123,25 +131,34 @@ const data = 2;
                 x: translateX,
                 y: translateY,
                 transformOrigin: `${originX}% ${originY}%`,
-                duration: 0.9,
+                duration: ZOOM_DURATION,
                 ease: "power3.inOut",
             });
+
+            if (targetUrl) {
+                tl.call(() => {
+                    isRedirecting = true;
+                    navigate(targetUrl);
+                }, undefined, ZOOM_DURATION - REDIRECT_EARLY-0.25);
+            }
 
             currentTl = tl;
         }
 
         function zoomOut() {
-            if (!isZoomed || !currentTl) return;
+            if (!isZoomed || !currentTl || isRedirecting) return;
             currentTl.reverse();
         }
 
         vinetas.forEach((vineta) => {
             vineta.addEventListener("click", (e) => {
                 e.stopPropagation();
+                const targetUrl = vineta.dataset.url;
+
                 if (isZoomed) {
                     zoomOut();
                 } else {
-                    zoomToVineta(vineta);
+                    zoomToVineta(vineta, targetUrl);
                 }
             });
         });

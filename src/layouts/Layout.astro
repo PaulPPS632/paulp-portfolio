@@ -1,6 +1,12 @@
 ---
  import '../styles/global.css'
  import { ClientRouter } from 'astro:transitions';
+
+ interface Props {
+	backgroundColor?: string;
+ }
+
+ const { backgroundColor = '#ECE0C1' } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -13,7 +19,7 @@
 		<title>Astro Basics</title>
 		<ClientRouter />
 	</head>
-	<body>
+	<body style={`--page-background-color: ${backgroundColor};`}>
 		<slot />
 	</body>
 </html>
@@ -24,6 +30,6 @@
 		margin: 0;
 		width: 100%;
 		height: 100%;
-		background-color: #ECE0C1;
+		background-color: var(--page-background-color);
 	}
 </style>
