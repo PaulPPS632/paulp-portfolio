@@ -1,0 +1,31 @@
+---
+import MiaWallace from "../../assets/r2-manager/mia_wallace.webp";
+import AachenBold from "../../assets/fonts/aachen-bold.otf";
+---
+
+<style define:vars={{ AachenBold }}>
+  @font-face {
+    font-family: "AachenBold";
+    src: url(var(--AachenBold)) format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .vignette-title {
+    font-family: "AachenBold", sans-serif;
+  }
+</style>
+<div class="relative w-full h-full bg-[#D42725]">
+    <div class="absolute top-0 sm:top-3 left-0 sm:-left-2 rotate-0 sm:-rotate-5 bg-[#FCDE0B] px-6 py-2 w-96">
+        <h3 class="vignette-title font-extrabold text-xl leading-tight text-black">
+            FILE MANAGER R2
+        </h3>
+    </div>
+    <img
+        src={MiaWallace.src}
+        alt="Mia Wallace from Pulp Fiction"
+        class="absolute bottom-0 -right-5 w-70 object-cover"
+        transition:name="mia-wallace"
+    />
+</div>

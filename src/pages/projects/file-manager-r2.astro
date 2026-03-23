@@ -1,0 +1,181 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import MiaWallace from "../../assets/r2-manager/mia_wallace.webp";
+import R2ScreenOne from "../../assets/r2-manager/screens-project/r2-manager-1.webp";
+import R2ScreenTwo from "../../assets/r2-manager/screens-project/r2-manager-2.webp";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout backgroundColor="#D42725">
+    <Header />
+    <main class="r2-story-page relative mx-auto flex w-full max-w-6xl flex-col gap-14 px-4 pb-20 pt-28 sm:px-8 sm:pt-32">
+        <section data-animate="hero" class="relative overflow-hidden rounded-3xl border border-[#fcd34d] bg-[#0f172a] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-10">
+            <p class="mb-3 inline-block rounded-full border border-[#fcd34d] bg-[#111827] px-3 py-1 font-sans text-xs font-semibold uppercase tracking-[0.18em] text-[#fef3c7]">
+                Ready for Cloudflare
+            </p>
+            <h1 class="max-w-3xl font-sans text-[clamp(2rem,4vw,3.5rem)] font-black leading-[1.05] text-[#fcd34d]">
+                File Manager R2
+            </h1>
+            <p class="mt-4 max-w-3xl font-sans text-base leading-relaxed text-[#fee2e2] sm:text-lg">
+                File Manager R2 es una herramienta lista para desplegar en Cloudflare. Permite subir,
+                eliminar y gestionar rápidamente archivos de un bucket R2, configurando solo una API Key
+                de Cloudflare y el bucket que se desea administrar.
+            </p>
+
+            <div class="mt-7 grid gap-3 sm:grid-cols-3">
+                <div class="js-stat rounded-xl border border-[#fcd34d]/40 bg-[#111827] p-4">
+                    <p class="font-sans text-xs uppercase tracking-widest text-[#fca5a5]">Arquitectura</p>
+                    <p class="mt-1 font-sans text-lg font-bold text-[#f5f5f5]">Monolito</p>
+                </div>
+                <div class="js-stat rounded-xl border border-[#fcd34d]/40 bg-[#111827] p-4">
+                    <p class="font-sans text-xs uppercase tracking-widest text-[#fca5a5]">Framework</p>
+                    <p class="mt-1 font-sans text-lg font-bold text-[#f5f5f5]">Vue</p>
+                </div>
+                <div class="js-stat rounded-xl border border-[#fcd34d]/40 bg-[#111827] p-4">
+                    <p class="font-sans text-xs uppercase tracking-widest text-[#fca5a5]">Objetivo</p>
+                    <p class="mt-1 font-sans text-lg font-bold text-[#f5f5f5]">Gestión rápida de buckets</p>
+                </div>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+                <a href="https://r2-manager.paulp.dev" target="_blank" rel="noreferrer" class="rounded-lg border border-[#fcd34d] bg-[#fcd34d] px-4 py-2 font-sans text-sm font-bold text-[#111827] transition hover:brightness-105">r2-manager.paulp.dev</a>
+                <a href="https://github.com/PaulPPS632/R2-MANAGER" target="_blank" rel="noreferrer" class="rounded-lg border border-[#fcd34d] bg-[#111827] px-4 py-2 font-sans text-sm font-bold text-[#fef3c7] transition hover:bg-[#1e293b]">GitHub Repo</a>
+            </div>
+        </section>
+
+        <section class="js-story-grid grid gap-5 sm:grid-cols-3">
+            <article class="js-story-card rounded-2xl border border-[#fcd34d]/45 bg-[#111827] p-6">
+                <h2 class="font-sans text-lg font-black text-[#fef3c7]">Contexto</h2>
+                <p class="mt-3 font-sans text-sm leading-relaxed text-[#e5e7eb]">
+                    Este proyecto nace para cubrir una necesidad práctica: administrar buckets R2 de forma
+                    simple y directa, sin un panel complejo ni configuración extensa.
+                </p>
+            </article>
+
+            <article class="js-story-card rounded-2xl border border-[#fcd34d]/45 bg-[#111827] p-6">
+                <h2 class="font-sans text-lg font-black text-[#fef3c7]">El porqué</h2>
+                <p class="mt-3 font-sans text-sm leading-relaxed text-[#e5e7eb]">
+                    El enfoque fue velocidad de uso: conectar API Key + bucket y empezar a trabajar.
+                    Subir, eliminar y listar archivos con la menor fricción posible.
+                </p>
+            </article>
+
+            <article class="js-story-card rounded-2xl border border-[#fcd34d]/45 bg-[#111827] p-6">
+                <h2 class="font-sans text-lg font-black text-[#fef3c7]">Datos de desarrollo</h2>
+                <ul class="mt-3 space-y-2 font-sans text-sm text-[#e5e7eb]">
+                    <li>• Aplicación en Vue.</li>
+                    <li>• Arquitectura monolítica.</li>
+                    <li>• Preparada para despliegue en Cloudflare.</li>
+                    <li>• Configuración por API Key + bucket.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="rounded-2xl border border-[#fcd34d] bg-[#0f172a] p-6 sm:p-8">
+            <h2 class="font-sans text-2xl font-black text-[#fcd34d]">Dirección visual</h2>
+            <p class="mt-3 max-w-3xl font-sans text-sm leading-relaxed text-[#fee2e2]">
+                Esta página del portfolio está inspirada en Pulp Fiction (no el producto original): rojo y
+                amarillo como colores principales, con soporte en negro y azul oscuro para contraste y
+                legibilidad.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-3">
+                <span class="rounded-full border border-black/50 bg-[#D42725] px-3 py-1 font-sans text-xs font-black text-white">Rojo #D42725</span>
+                <span class="rounded-full border border-black/50 bg-[#FCDE0B] px-3 py-1 font-sans text-xs font-black text-black">Amarillo #FCDE0B</span>
+                <span class="rounded-full border border-black/50 bg-[#111111] px-3 py-1 font-sans text-xs font-black text-white">Negro #111111</span>
+                <span class="rounded-full border border-black/50 bg-[#0f172a] px-3 py-1 font-sans text-xs font-black text-white">Azul oscuro #0f172a</span>
+            </div>
+        </section>
+
+        <section class="space-y-4">
+            <h2 class="font-sans text-2xl font-black text-[#fef3c7]">Pantallas del proyecto</h2>
+            <div class="js-gallery-grid grid gap-4 md:grid-cols-2">
+                <figure class="js-shot overflow-hidden rounded-2xl border border-[#fcd34d]/45 bg-[#0f172a]">
+                    <img src={R2ScreenOne.src} alt="Vista principal de File Manager R2" class="h-full w-full object-cover" />
+                    <figcaption class="border-t border-[#334155] px-4 py-3 font-sans text-sm text-[#f3f4f6]">Panel principal orientado a gestión rápida.</figcaption>
+                </figure>
+
+                <figure class="js-shot overflow-hidden rounded-2xl border border-[#fcd34d]/45 bg-[#0f172a]">
+                    <img src={R2ScreenTwo.src} alt="Vista secundaria de File Manager R2" class="h-full w-full object-cover" />
+                    <figcaption class="border-t border-[#334155] px-4 py-3 font-sans text-sm text-[#f3f4f6]">Operaciones de archivos y navegación del bucket.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <img
+            src={MiaWallace.src}
+            alt="Mia Wallace from Pulp Fiction"
+            class="js-mia-wallace pointer-events-none fixed bottom-0 right-0 z-0 w-36 opacity-95 sm:-right-16 sm:w-120"
+            transition:name="mia-wallace"
+        />
+    </main>
+</Layout>
+
+<script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    function initR2PageAnimations() {
+        const page = document.querySelector<HTMLElement>(".r2-story-page");
+        if (!page) return;
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from("[data-animate='hero']", {
+            autoAlpha: 0,
+            y: 32,
+            duration: 0.85,
+            ease: "power3.out",
+        });
+
+        gsap.from(".js-stat", {
+            autoAlpha: 0,
+            y: 20,
+            duration: 0.55,
+            delay: 0.2,
+            stagger: 0.12,
+            ease: "power2.out",
+        });
+
+        gsap.from(".js-story-card", {
+            scrollTrigger: {
+                trigger: ".js-story-grid",
+                start: "top 78%",
+                once: true,
+            },
+            autoAlpha: 0,
+            y: 28,
+            duration: 0.65,
+            stagger: 0.14,
+            ease: "power2.out",
+        });
+
+        gsap.from(".js-shot", {
+            scrollTrigger: {
+                trigger: ".js-gallery-grid",
+                start: "top 80%",
+                once: true,
+            },
+            autoAlpha: 0,
+            y: 24,
+            scale: 0.97,
+            duration: 0.7,
+            stagger: 0.12,
+            ease: "power2.out",
+        });
+
+        gsap.to(".js-mia-wallace", {
+            y: -10,
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+        });
+    }
+
+    document.addEventListener("astro:page-load", initR2PageAnimations);
+</script>

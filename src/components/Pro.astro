@@ -1,6 +1,14 @@
 ---
 import VignetteGameofthrones from "./vignettes/vignette-gameofthrones.astro";
-
+import VignetteFileManagerR2 from "./vignettes/VignetteFileManagerR2.astro";
+import VignetteKardexCuadrado from "./vignettes/VignetteKardexCuadrado.astro";
+import VignetteWhatsappMarketing from "./vignettes/VignetteWhatsappMarketing.astro";
+import VignetteDC from "./vignettes/VignetteDC.astro";
+import VignetteCCD from "./vignettes/VignetteCCD.astro";
+import VignettePrfact from "./vignettes/VignettePrfact.astro";
+import VignetteCertificateGenerator from "./vignettes/VignetteCertificateGenerator.astro";
+import VignetteLandingsCCD from "./vignettes/VignetteLandingsCCD.astro";
+import VignetteGenessisPortfolio from "./vignettes/VignetteGenessisPortfolio.astro";
 const data = 2;
 ---
 
@@ -11,18 +19,36 @@ const data = 2;
     <div
         class="comic-page grid grid-cols-3 grid-rows-8 w-full max-w-6xl h-[88vh] rounded-lg border-[6px] border-black bg-black shadow-[8px_8px_0_#1a1a1a] gap-2"
     >
-        <div class="vineta row-span-2 bg-[#111212] v-1 flex items-center justify-center cursor-pointer" data-url="/game-of-thrones">
+        <div class="vineta row-span-2 bg-[#111212] v-1 flex items-center justify-center cursor-pointer" data-url="/projects/game-of-thrones">
             <VignetteGameofthrones />
         </div>
-        <div class="vineta row-span-2 col-start-1 row-start-3 bg-amber-300 v-2 flex items-center justify-center cursor-pointer">2</div>
-        <div class="vineta row-span-2 col-start-1 row-start-5 bg-green-400 v-3 flex items-center justify-center cursor-pointer">3</div>
-        <div class="vineta row-span-2 col-start-1 row-start-7 bg-blue-400 v-4 flex items-center justify-center cursor-pointer">4</div>
-        <div class="vineta row-span-5 col-start-2 row-start-1 bg-purple-400 v-5 flex items-center justify-center cursor-pointer">5</div>
-        <div class="vineta row-span-3 col-start-2 row-start-6 bg-pink-400 v-6 flex items-center justify-center cursor-pointer">6</div>
-        <div class="vineta row-span-2 col-start-3 row-start-1 bg-yellow-400 v-7 flex items-center justify-center cursor-pointer">7</div>
-        <div class="vineta row-span-2 col-start-3 row-start-3 bg-indigo-400 v-8 flex items-center justify-center cursor-pointer">8</div>
-        <div class="vineta row-span-2 col-start-3 row-start-5 bg-teal-400 v-9 flex items-center justify-center cursor-pointer">9</div>
-        <div class="vineta row-span-2 col-start-3 row-start-7 bg-gray-400 v-10 flex items-center justify-center cursor-pointer">10</div>
+        <div class="vineta row-span-2 col-start-1 row-start-3 bg-amber-300 v-2 flex items-center justify-center cursor-pointer" data-url="/projects/file-manager-r2">
+            <VignetteFileManagerR2 />
+        </div>
+        <div class="vineta row-span-2 col-start-1 row-start-5 bg-green-400 v-3 flex items-center justify-center cursor-pointer">
+            <VignetteKardexCuadrado />
+        </div>
+        <div class="vineta row-span-2 col-start-1 row-start-7 bg-blue-400 v-4 flex items-center justify-center cursor-pointer">
+            <VignetteWhatsappMarketing />
+        </div>
+        <div class="vineta row-span-5 col-start-2 row-start-1 bg-purple-400 v-5 flex items-center justify-center cursor-pointer">
+            <VignetteDC />
+        </div>
+        <div class="vineta row-span-3 col-start-2 row-start-6 bg-pink-400 v-6 flex items-center justify-center cursor-pointer">
+            <VignetteCCD />
+        </div>
+        <div class="vineta row-span-2 col-start-3 row-start-1 bg-yellow-400 v-7 flex items-center justify-center cursor-pointer">
+            <VignettePrfact />
+        </div>
+        <div class="vineta row-span-2 col-start-3 row-start-3 bg-indigo-400 v-8 flex items-center justify-center cursor-pointer">
+            <VignetteCertificateGenerator />
+        </div>
+        <div class="vineta row-span-2 col-start-3 row-start-5 bg-teal-400 v-9 flex items-center justify-center cursor-pointer">
+            <VignetteLandingsCCD />
+        </div>
+        <div class="vineta row-span-2 col-start-3 row-start-7 bg-gray-400 v-10 flex items-center justify-center cursor-pointer">
+            <VignetteGenessisPortfolio />
+        </div>
     </div>
 </section>
 <style>
