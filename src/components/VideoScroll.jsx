@@ -7,14 +7,16 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const VideoScroll = ({ videoSrc, scrollHeight = "500vh" }) => {
+const VideoScroll = ({ videoSrc, scrollHeight = "500vh", children }) => {
   const videoRef = useRef(null);
   const containerRef = useRef(null);
+  const overlayRef = useRef(null);
 
   useEffect(() => {
     const video = videoRef.current;
     const container = containerRef.current;
-    if (!video || !container) return;
+    const overlay = overlayRef.current;
+    if (!video || !container || !overlay) return;
 
     let src = video.currentSrc || video.src;
 
@@ -43,6 +45,20 @@ const VideoScroll = ({ videoSrc, scrollHeight = "500vh" }) => {
         video,
         { currentTime: 0 },
         { currentTime: video.duration || 1 }
+      );
+
+      tl.fromTo(
+        overlay,
+        { opacity: 0.75 },
+        { opacity: 0, duration: 0.2 },
+        0
+      );
+
+      tl.fromTo(
+        overlay,
+        { opacity: 0 },
+        { opacity: 0.75, duration: 0.2 },
+        0.8
       );
     };
 
@@ -111,6 +127,18 @@ const VideoScroll = ({ videoSrc, scrollHeight = "500vh" }) => {
         }}
       />
 
+      <div
+        ref={overlayRef}
+        style={{
+          position: 'fixed',
+          inset: 0,
+          background: '#000',
+          opacity: 0.75,
+          zIndex: -1,
+          pointerEvents: 'none'
+        }}
+      />
+
       {/* El Contenedor que fuerza el scroll */}
       <div 
         id="container" 
@@ -118,6 +146,7 @@ const VideoScroll = ({ videoSrc, scrollHeight = "500vh" }) => {
         style={{ height: scrollHeight, position: 'relative' }}
       >
         {/* Aquí puedes añadir otros componentes que quieras que floten sobre el video mientras haces scroll */}
+        {children}
       </div>
     </>
   );

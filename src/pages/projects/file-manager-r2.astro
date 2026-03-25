@@ -104,7 +104,12 @@ import VideoScroll from "../../components/VideoScroll";
                 </figure>
             </div>
         </section>
-        <VideoScroll client:load videoSrc={VIDEO_OPTIMIZADO} />
+        <VideoScroll client:load scrollHeight="400vh" videoSrc={VIDEO_OPTIMIZADO}>
+                <div class="absolute bottom-[50vh] left-1/2 w-full -translate-x-1/2 text-center">
+                    <h3 class="font-sans text-lg font-bold text-white">Demostración de uso en video</h3>
+                    <a href="/#projects" class="font-sans text-sm font-bold text-[#fcd34d] hover:underline">Más proyectos</a>
+                </div>
+        </VideoScroll>
 
         <img
             src={MiaWallace.src}
