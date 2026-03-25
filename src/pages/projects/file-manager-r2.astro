@@ -4,7 +4,8 @@ import Header from "../../components/Header.astro";
 import MiaWallace from "../../assets/r2-manager/mia_wallace.webp";
 import R2ScreenOne from "../../assets/r2-manager/screens-project/r2-manager-1.webp";
 import R2ScreenTwo from "../../assets/r2-manager/screens-project/r2-manager-2.webp";
-
+import VIDEO_OPTIMIZADO from "../../assets/r2-manager/disparos.mp4";
+import VideoScroll from "../../components/VideoScroll";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -103,6 +104,7 @@ import R2ScreenTwo from "../../assets/r2-manager/screens-project/r2-manager-2.we
                 </figure>
             </div>
         </section>
+        <VideoScroll client:load videoSrc={VIDEO_OPTIMIZADO} />
 
         <img
             src={MiaWallace.src}

@@ -1,0 +1,1 @@
+ffmpeg -i tu_video_original.mp4 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p video_optimizado.mp4
