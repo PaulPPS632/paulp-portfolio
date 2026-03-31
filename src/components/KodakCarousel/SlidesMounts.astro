@@ -1,0 +1,49 @@
+---
+
+---
+
+<div class="js-slides-mount bg-amber-50 rounded-2xl w-60 aspect-square grid grid-cols-1 grid-rows-[50px_1fr_50px] place-items-center transform-3d
+-rotate-x-45 -rotate-z-12 rotate-y-6 perspective-distant
+">
+    <p class="row-span-1 text-lg text-red-900 font-bold">Transparency</p>
+    <div class="row-span-1 bg-black rounded-md w-[80%] aspect-3/2 m-auto">
+    </div>
+    <p class="row-span-1 text-lg text-red-900 font-bold rotate-180">Transparency</p>
+</div>
+<!-- 
+<script>
+    import gsap from "gsap";
+
+    function initSlidesMountPerspective() {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        const mounts = document.querySelectorAll<HTMLElement>(".js-slides-mount");
+
+        mounts.forEach((mount, index) => {
+            if (mount.dataset.gsapInit === "true") return;
+
+            mount.dataset.gsapInit = "true";
+
+            gsap.fromTo(
+                mount,
+                {
+                    rotationX: 28,
+                    y: -18,
+                    autoAlpha: 0,
+                    transformOrigin: "top center",
+                    transformPerspective: 900,
+                },
+                {
+                    rotationX: 0,
+                    y: 0,
+                    autoAlpha: 1,
+                    duration: 0.9,
+                    delay: index * 0.08,
+                    ease: "power3.out",
+                },
+            );
+        });
+    }
+
+    document.addEventListener("astro:page-load", initSlidesMountPerspective);
+</script> -->
